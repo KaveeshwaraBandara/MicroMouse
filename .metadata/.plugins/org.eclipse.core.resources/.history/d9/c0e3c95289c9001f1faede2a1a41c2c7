@@ -1,0 +1,10 @@
+/*
+ * blink.c
+ *
+ *  Created on: Jan 3, 2025
+ *      Author: user
+ */
+#include "stdio.h"
+
+void blink(void);
+

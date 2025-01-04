@@ -1,0 +1,35 @@
+2025-01-03 00:00:34,838 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 722312768 Bytes (812646400)
+2025-01-03 00:00:40,736 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 266297112 Bytes (812646400)
+2025-01-03 00:00:43,491 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 329211672 Bytes (812646400)
+2025-01-03 00:00:44,623 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: NVIC
+2025-01-03 00:00:44,624 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: TIM1_8F1
+2025-01-03 00:00:44,624 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: SYS
+2025-01-03 00:00:44,626 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: GPIO
+2025-01-03 00:00:44,626 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: RCC
+2025-01-03 00:00:44,630 [INFO] CodeGenerator:896 - code generatio: config db path: C:\ST\STM32CubeIDE_1.17.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.13.0.202411220809\\db\
+2025-01-03 00:00:44,894 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\user\Desktop\stm32Board\ultrasonic\MXTmpFiles\license.tmp_save
+2025-01-03 00:00:45,425 [INFO] CodeEngine:279 - Generated code: C:\Users\user\Desktop\stm32Board\ultrasonic\MXTmpFiles\license.tmp
+2025-01-03 00:00:45,508 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\user\Desktop\stm32Board\ultrasonic\MXTmpFiles\gpio.tmp_save
+2025-01-03 00:00:45,851 [INFO] CodeEngine:279 - Generated code: C:\Users\user\Desktop\stm32Board\ultrasonic\MXTmpFiles\gpio.tmp
+2025-01-03 00:00:46,158 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\user\Desktop\stm32Board\ultrasonic\Core\Src\stm32f1xx_it.c_save
+2025-01-03 00:00:46,817 [INFO] CodeEngine:279 - Generated code: C:\Users\user\Desktop\stm32Board\ultrasonic\Core\Src\stm32f1xx_it.c
+2025-01-03 00:00:46,842 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\user\Desktop\stm32Board\ultrasonic\Core\Inc\stm32f1xx_it.h_save
+2025-01-03 00:00:47,083 [INFO] CodeEngine:279 - Generated code: C:\Users\user\Desktop\stm32Board\ultrasonic\Core\Inc\stm32f1xx_it.h
+2025-01-03 00:00:47,140 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\user\Desktop\stm32Board\ultrasonic\Core\Src\stm32f1xx_hal_msp.c_save
+2025-01-03 00:00:47,518 [INFO] CodeEngine:279 - Generated code: C:\Users\user\Desktop\stm32Board\ultrasonic\Core\Src\stm32f1xx_hal_msp.c
+2025-01-03 00:00:47,534 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\user\Desktop\stm32Board\ultrasonic\MXTmpFiles\system.tmp_save
+2025-01-03 00:00:47,710 [INFO] CodeEngine:279 - Generated code: C:\Users\user\Desktop\stm32Board\ultrasonic\MXTmpFiles\system.tmp
+2025-01-03 00:00:47,753 [INFO] CodeEngine:311 - oldGeneratedFile, C:\Users\user\Desktop\stm32Board\ultrasonic\Core\Inc\stm32f1xx_hal_conf.h_save
+2025-01-03 00:00:47,984 [INFO] CodeEngine:335 - Generated code: C:\Users\user\Desktop\stm32Board\ultrasonic\Core\Inc\stm32f1xx_hal_conf.h
+2025-01-03 00:00:48,061 [WARN] IPConfigManager:3618 - IP not found : TIM
+2025-01-03 00:00:48,063 [WARN] CodeGenerator:4152 - IP not found : null
+2025-01-03 00:00:48,094 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\user\Desktop\stm32Board\ultrasonic\Core\Inc\main.h_save
+2025-01-03 00:00:48,388 [INFO] CodeEngine:279 - Generated code: C:\Users\user\Desktop\stm32Board\ultrasonic\Core\Inc\main.h
+2025-01-03 00:00:48,410 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\user\Desktop\stm32Board\ultrasonic\Core\Src\main.c_save
+2025-01-03 00:00:48,770 [INFO] CodeEngine:279 - Generated code: C:\Users\user\Desktop\stm32Board\ultrasonic\Core\Src\main.c
+2025-01-03 00:00:49,861 [INFO] ProjectBuilder:3289 - Time for Copy HAL[1] : 697mS.
+2025-01-03 00:00:49,870 [INFO] ProjectBuilder:4876 - Project Generator version: 4.5.0-RC5
+2025-01-03 00:00:50,057 [INFO] ConfigFileManager:1579 - The Die is : DIE410
+2025-01-03 00:00:53,375 [INFO] ProjectBuilder:5154 - Time for Generating toolchain IDE Files: 3505mS.
+2025-01-03 00:00:53,378 [INFO] ProjectBuilder:3146 - Time for Copy CMSIS : 2mS.
+2025-01-03 00:00:53,382 [INFO] ProjectBuilder:3146 - Time for Copy CMSIS : 0mS.

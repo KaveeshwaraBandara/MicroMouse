@@ -1,0 +1,10 @@
+08:52:23 **** Build of configuration Debug for project intled ****
+make -j4 all 
+arm-none-eabi-size  intled.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4608	     12	   1572	   6192	   1830	intled.elf
+Finished building: default.size.stdout
+ 
+
+08:52:24 Build Finished. 0 errors, 0 warnings. (took 1s.296ms)
+

@@ -1,0 +1,12 @@
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=win32
+configDescList=org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:ultrasonic Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:exled Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:motor_rotating_direction_test Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:encoder_test Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:intled Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:uartcommunication Debug
+eclipse.preferences.version=1
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:encoder_test\ Debug/activeLaunchMode=run
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:encoder_test\ Debug/activeLaunchTarget=null\:---
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:exled\ Debug/activeLaunchMode=run
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:exled\ Debug/activeLaunchTarget=null\:---
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:getting_start\ Debug/activeLaunchMode=run
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:getting_start\ Debug/activeLaunchTarget=null\:---
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:ledblink\ Debug/activeLaunchMode=run
