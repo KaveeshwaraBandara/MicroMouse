@@ -7,23 +7,23 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
   1 .text         0000251c  0800010c  0800010c  0000110c  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  2 .rodata       00002128  08002628  08002628  00003628  2**2
+  2 .rodata       0000212c  08002628  08002628  00003628  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  3 .ARM.extab    00000000  08004750  08004750  0000601c  2**0
+  3 .ARM.extab    00000000  08004754  08004754  0000601c  2**0
                   CONTENTS
-  4 .ARM          00000000  08004750  08004750  0000601c  2**0
+  4 .ARM          00000000  08004754  08004754  0000601c  2**0
                   CONTENTS
-  5 .preinit_array 00000000  08004750  08004750  0000601c  2**0
+  5 .preinit_array 00000000  08004754  08004754  0000601c  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  6 .init_array   00000004  08004750  08004750  00005750  2**2
+  6 .init_array   00000004  08004754  08004754  00005754  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  7 .fini_array   00000004  08004754  08004754  00005754  2**2
+  7 .fini_array   00000004  08004758  08004758  00005758  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  8 .data         0000001c  20000000  08004758  00006000  2**2
+  8 .data         0000001c  20000000  0800475c  00006000  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  9 .bss          0000047c  2000001c  08004774  0000601c  2**2
+  9 .bss          0000047c  2000001c  08004778  0000601c  2**2
                   ALLOC
- 10 ._user_heap_stack 00000600  20000498  08004774  00006498  2**0
+ 10 ._user_heap_stack 00000600  20000498  08004778  00006498  2**0
                   ALLOC
  11 .ARM.attributes 00000029  00000000  00000000  0000601c  2**0
                   CONTENTS, READONLY
@@ -120,7 +120,7 @@ int main(void)
  8000166:	2100      	movs	r1, #0
  8000168:	2000      	movs	r0, #0
  800016a:	f002 f86f 	bl	800224c <SSD1306_GotoXY>
-    SSD1306_Puts ("NIZAR", &Font_11x18, 1);
+    SSD1306_Puts ("Imanchana", &Font_11x18, 1);
  800016e:	2201      	movs	r2, #1
  8000170:	493a      	ldr	r1, [pc, #232]	@ (800025c <main+0x110>)
  8000172:	483b      	ldr	r0, [pc, #236]	@ (8000260 <main+0x114>)
@@ -129,7 +129,7 @@ int main(void)
  8000178:	211e      	movs	r1, #30
  800017a:	2000      	movs	r0, #0
  800017c:	f002 f866 	bl	800224c <SSD1306_GotoXY>
-    SSD1306_Puts ("MOHIDEEN", &Font_11x18, 1);
+    SSD1306_Puts ("Kaveeshwara", &Font_11x18, 1);
  8000180:	2201      	movs	r2, #1
  8000182:	4936      	ldr	r1, [pc, #216]	@ (800025c <main+0x110>)
  8000184:	4837      	ldr	r0, [pc, #220]	@ (8000264 <main+0x118>)
@@ -252,10 +252,10 @@ int main(void)
  800025a:	e7b9      	b.n	80001d0 <main+0x84>
  800025c:	2000000c 	.word	0x2000000c
  8000260:	08002628 	.word	0x08002628
- 8000264:	08002630 	.word	0x08002630
- 8000268:	0800263c 	.word	0x0800263c
+ 8000264:	08002634 	.word	0x08002634
+ 8000268:	08002640 	.word	0x08002640
  800026c:	20000014 	.word	0x20000014
- 8000270:	08002644 	.word	0x08002644
+ 8000270:	08002648 	.word	0x08002648
 
 08000274 <SystemClock_Config>:
 /**
@@ -905,7 +905,7 @@ LoopFillZerobss:
   ldr r1, =_edata
  8000514:	2000001c 	.word	0x2000001c
   ldr r2, =_sidata
- 8000518:	08004758 	.word	0x08004758
+ 8000518:	0800475c 	.word	0x0800475c
   ldr r2, =_sbss
  800051c:	2000001c 	.word	0x2000001c
   ldr r4, =_ebss
@@ -5063,7 +5063,7 @@ if (((RCC_ClkInitStruct->ClockType) & RCC_CLOCKTYPE_PCLK1) == RCC_CLOCKTYPE_PCLK
  8001d5a:	bf00      	nop
  8001d5c:	40022000 	.word	0x40022000
  8001d60:	40021000 	.word	0x40021000
- 8001d64:	08002654 	.word	0x08002654
+ 8001d64:	08002658 	.word	0x08002658
  8001d68:	20000000 	.word	0x20000000
  8001d6c:	20000004 	.word	0x20000004
 
@@ -5198,8 +5198,8 @@ uint32_t HAL_RCC_GetSysClockFreq(void)
  8001e02:	bf00      	nop
  8001e04:	40021000 	.word	0x40021000
  8001e08:	007a1200 	.word	0x007a1200
- 8001e0c:	0800266c 	.word	0x0800266c
- 8001e10:	0800267c 	.word	0x0800267c
+ 8001e0c:	08002670 	.word	0x08002670
+ 8001e10:	08002680 	.word	0x08002680
  8001e14:	003d0900 	.word	0x003d0900
 
 08001e18 <HAL_RCC_GetHCLKFreq>:
@@ -5245,7 +5245,7 @@ uint32_t HAL_RCC_GetPCLK1Freq(void)
  8001e48:	4618      	mov	r0, r3
  8001e4a:	bd80      	pop	{r7, pc}
  8001e4c:	40021000 	.word	0x40021000
- 8001e50:	08002664 	.word	0x08002664
+ 8001e50:	08002668 	.word	0x08002668
 
 08001e54 <RCC_Delay>:
   * @brief  This function provides delay (in milliseconds) based on CPU cycles method.
@@ -6364,7 +6364,7 @@ void ssd1306_I2C_Write(uint8_t address, uint8_t reg, uint8_t data) {
  80025ac:	f801 5901 	strb.w	r5, [r1], #-1
  80025b0:	e7f4      	b.n	800259c <__utoa+0x68>
  80025b2:	bf00      	nop
- 80025b4:	08004728 	.word	0x08004728
+ 80025b4:	0800472c 	.word	0x0800472c
 
 080025b8 <memset>:
  80025b8:	4603      	mov	r3, r0
@@ -6401,10 +6401,10 @@ void ssd1306_I2C_Write(uint8_t address, uint8_t reg, uint8_t data) {
  80025fa:	4798      	blx	r3
  80025fc:	3601      	adds	r6, #1
  80025fe:	e7f2      	b.n	80025e6 <__libc_init_array+0x1e>
- 8002600:	08004750 	.word	0x08004750
- 8002604:	08004750 	.word	0x08004750
- 8002608:	08004750 	.word	0x08004750
- 800260c:	08004754 	.word	0x08004754
+ 8002600:	08004754 	.word	0x08004754
+ 8002604:	08004754 	.word	0x08004754
+ 8002608:	08004754 	.word	0x08004754
+ 800260c:	08004758 	.word	0x08004758
 
 08002610 <_init>:
  8002610:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
