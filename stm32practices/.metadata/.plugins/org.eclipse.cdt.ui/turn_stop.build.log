@@ -1,0 +1,17 @@
+21:38:12 **** Incremental Build of configuration Debug for project turn_stop ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/user/Desktop/stm32Board/turn_stop/myLibrary" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "turn_stop.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\user\Desktop\stm32Board\turn_stop\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="turn_stop.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: turn_stop.elf
+ 
+arm-none-eabi-size  turn_stop.elf 
+arm-none-eabi-objdump -h -S turn_stop.elf  > "turn_stop.list"
+   text	   data	    bss	    dec	    hex	filename
+  18528	     20	   2900	  21448	   53c8	turn_stop.elf
+Finished building: default.size.stdout
+ 
+Finished building: turn_stop.list
+ 
+
+21:38:15 Build Finished. 0 errors, 0 warnings. (took 2s.525ms)
+

@@ -2469,3 +2469,33 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY com.st.stm32cube.ide.mcu.debug.launch 2 0 2025-01-04 13:23:24.131
 !MESSAGE Won't launch debug session since we failed to locate the binary.
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-01-04 16:29:31.237
+!MESSAGE Indexed 'turn_stop' (17 sources, 78 headers) in 6.36 sec: 3,643 declarations; 13,251 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.012%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-01-04 16:51:31.829
+!MESSAGE Indexed 'turn_stop' (22 sources, 86 headers) in 2.59 sec: 6,163 declarations; 42,123 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0041%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-01-04 21:45:07.226
+!MESSAGE Indexed 'twomotorcontrol' (17 sources, 78 headers) in 3.87 sec: 3,643 declarations; 13,251 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.012%)
+!SESSION 2025-01-05 08:10:13.632 -----------------------------------------------
+eclipse.buildId=Version 1.17.0
+java.version=21.0.3
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2025-01-05 08:10:25.358
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2025-01-05 08:10:25.369
+!MESSAGE Log4j2 initialized with config file C:\Users\user\Desktop\stm32Board\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2025-01-05 08:10:45.240
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-01-05 09:36:48.063
+!MESSAGE Indexed 'twomotorcontrol' (20 sources, 86 headers) in 3.3 sec: 6,020 declarations; 41,573 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0042%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-01-05 09:45:11.489
+!MESSAGE Indexed 'twomotorcontrol' (22 sources, 86 headers) in 2.42 sec: 6,099 declarations; 42,380 references; 0 unresolved inclusions; 1 syntax errors; 130 unresolved names (0.27%)

@@ -1,4 +1,4 @@
-19:34:19 **** Incremental Build of configuration Debug for project motor_rotating_direction_test ****
+21:59:45 **** Build of configuration Debug for project motor_rotating_direction_test ****
 make -j4 all 
 arm-none-eabi-size  motor_rotating_direction_test.elf 
    text	   data	    bss	    dec	    hex	filename
@@ -6,5 +6,5 @@ arm-none-eabi-size  motor_rotating_direction_test.elf
 Finished building: default.size.stdout
  
 
-19:34:19 Build Finished. 0 errors, 0 warnings. (took 441ms)
+21:59:46 Build Finished. 0 errors, 0 warnings. (took 615ms)
 
