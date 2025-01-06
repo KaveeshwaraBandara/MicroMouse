@@ -139,7 +139,7 @@ int main(void)
 	  TIM1->CCR2 = 100;// 50% duty cycle for TIM_CHANNEL_1
 	  HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
 	  HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);
-	  HAL_Delay(3000);
+	  HAL_Delay(300000);
 
 	  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_12, 0);
 	  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, 0);

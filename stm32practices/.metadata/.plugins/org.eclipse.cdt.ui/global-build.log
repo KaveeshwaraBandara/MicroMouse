@@ -1,53 +1,45 @@
-10:01:51 **** Incremental Build of configuration Debug for project twomotorcontrol ****
+22:07:41 **** Incremental Build of configuration Debug for project toftest1 ****
 make -j4 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/user/Desktop/stm32Board/twomotorcontrol/myLibrary" -I"C:/Users/user/Desktop/stm32Board/twomotorcontrol/mylib" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "twomotorcontrol.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\user\Desktop\stm32Board\twomotorcontrol\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="twomotorcontrol.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: twomotorcontrol.elf
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/user/Desktop/stm32Board/toftest1/myLibraries" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/main.c:26:
+C:/Users/user/Desktop/stm32Board/toftest1/myLibraries/VL53L0X.h:173:17: warning: 'decodeTimeout' declared 'static' but never defined [-Wunused-function]
+  173 | static uint16_t decodeTimeout(uint16_t value);
+      |                 ^~~~~~~~~~~~~
+C:/Users/user/Desktop/stm32Board/toftest1/myLibraries/VL53L0X.h:174:17: warning: 'encodeTimeout' declared 'static' but never defined [-Wunused-function]
+  174 | static uint16_t encodeTimeout(uint16_t timeout_mclks);
+      |                 ^~~~~~~~~~~~~
+C:/Users/user/Desktop/stm32Board/toftest1/myLibraries/VL53L0X.h:175:17: warning: 'timeoutMclksToMicroseconds' declared 'static' but never defined [-Wunused-function]
+  175 | static uint32_t timeoutMclksToMicroseconds(uint16_t timeout_period_mclks, uint8_t vcsel_period_pclks);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/user/Desktop/stm32Board/toftest1/myLibraries/VL53L0X.h:176:17: warning: 'timeoutMicrosecondsToMclks' declared 'static' but never defined [-Wunused-function]
+  176 | static uint32_t timeoutMicrosecondsToMclks(uint32_t timeout_period_us, uint8_t vcsel_period_pclks);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "toftest1.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\user\Desktop\stm32Board\toftest1\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="toftest1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: toftest1.elf
  
-arm-none-eabi-size  twomotorcontrol.elf 
-arm-none-eabi-objdump -h -S twomotorcontrol.elf  > "twomotorcontrol.list"
+arm-none-eabi-size  toftest1.elf 
+arm-none-eabi-objdump -h -S toftest1.elf  > "toftest1.list"
    text	   data	    bss	    dec	    hex	filename
-  19460	     20	   2900	  22380	   576c	twomotorcontrol.elf
+  21380	     28	   2692	  24100	   5e24	toftest1.elf
 Finished building: default.size.stdout
  
-Finished building: twomotorcontrol.list
+Finished building: toftest1.list
  
-10:01:57 **** Incremental Build of configuration Debug for project twomotorcontrol ****
+22:07:46 **** Incremental Build of configuration Debug for project toftest1 ****
 make -j4 all 
-arm-none-eabi-size  twomotorcontrol.elf 
+arm-none-eabi-size  toftest1.elf 
    text	   data	    bss	    dec	    hex	filename
-  19460	     20	   2900	  22380	   576c	twomotorcontrol.elf
+  21380	     28	   2692	  24100	   5e24	toftest1.elf
 Finished building: default.size.stdout
  
-10:43:01 **** Incremental Build of configuration Debug for project twomotorcontrol ****
+08:42:04 **** Incremental Build of configuration Debug for project twomotorcontrol ****
 make -j4 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/user/Desktop/stm32Board/twomotorcontrol/myLibrary" -I"C:/Users/user/Desktop/stm32Board/twomotorcontrol/mylib" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "twomotorcontrol.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\user\Desktop\stm32Board\twomotorcontrol\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="twomotorcontrol.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: twomotorcontrol.elf
- 
 arm-none-eabi-size  twomotorcontrol.elf 
-arm-none-eabi-objdump -h -S twomotorcontrol.elf  > "twomotorcontrol.list"
-   text	   data	    bss	    dec	    hex	filename
-  19436	     20	   2900	  22356	   5754	twomotorcontrol.elf
-Finished building: default.size.stdout
- 
-Finished building: twomotorcontrol.list
- 
-10:45:06 **** Incremental Build of configuration Debug for project twomotorcontrol ****
-make -j4 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/user/Desktop/stm32Board/twomotorcontrol/myLibrary" -I"C:/Users/user/Desktop/stm32Board/twomotorcontrol/mylib" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "twomotorcontrol.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\user\Desktop\stm32Board\twomotorcontrol\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="twomotorcontrol.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: twomotorcontrol.elf
- 
-arm-none-eabi-size  twomotorcontrol.elf 
-arm-none-eabi-objdump -h -S twomotorcontrol.elf  > "twomotorcontrol.list"
    text	   data	    bss	    dec	    hex	filename
   19440	     20	   2900	  22360	   5758	twomotorcontrol.elf
 Finished building: default.size.stdout
  
-Finished building: twomotorcontrol.list
- 
-10:50:03 **** Incremental Build of configuration Debug for project twomotorcontrol ****
+08:43:23 **** Incremental Build of configuration Debug for project twomotorcontrol ****
 make -j4 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/user/Desktop/stm32Board/twomotorcontrol/myLibrary" -I"C:/Users/user/Desktop/stm32Board/twomotorcontrol/mylib" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
 arm-none-eabi-gcc -o "twomotorcontrol.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\user\Desktop\stm32Board\twomotorcontrol\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="twomotorcontrol.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
@@ -56,7 +48,7 @@ Finished building target: twomotorcontrol.elf
 arm-none-eabi-size  twomotorcontrol.elf 
 arm-none-eabi-objdump -h -S twomotorcontrol.elf  > "twomotorcontrol.list"
    text	   data	    bss	    dec	    hex	filename
-  19440	     20	   2900	  22360	   5758	twomotorcontrol.elf
+  19444	     20	   2900	  22364	   575c	twomotorcontrol.elf
 Finished building: default.size.stdout
  
 Finished building: twomotorcontrol.list

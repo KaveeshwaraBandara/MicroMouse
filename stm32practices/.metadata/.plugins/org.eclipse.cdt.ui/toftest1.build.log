@@ -1,0 +1,10 @@
+22:07:46 **** Incremental Build of configuration Debug for project toftest1 ****
+make -j4 all 
+arm-none-eabi-size  toftest1.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21380	     28	   2692	  24100	   5e24	toftest1.elf
+Finished building: default.size.stdout
+ 
+
+22:07:47 Build Finished. 0 errors, 0 warnings. (took 545ms)
+
