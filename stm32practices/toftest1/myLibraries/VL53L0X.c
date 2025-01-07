@@ -27,6 +27,11 @@
 #define calcMacroPeriod(vcsel_period_pclks) ((((uint32_t)2304 * (vcsel_period_pclks) * 1655) + 500) / 1000)
 
 uint32_t measurement_timing_budget_us;
+uint8_t address=0x29;
+
+void VL53L0X_SetAddress(uint8_t new_add) {
+	address = new_add;
+}
 
 uint32_t millis(){
 	uint32_t st=HAL_GetTick();
@@ -42,6 +47,37 @@ void writeReg(uint8_t reg, uint8_t value)
 	HAL_I2C_Master_Transmit(&hi2c1,I2C_SLAVE_DEVICE_ADDRESS,array,2,HAL_MAX_DELAY);
 
 }
+//
+//void writeReg(uint8_t deviceAddress, uint8_t reg, uint8_t value)
+//{
+//    uint8_t array[2];
+//    array[0] = reg;    // Register address
+//    array[1] = value;  // Value to write
+//    HAL_I2C_Master_Transmit(&hi2c1, (deviceAddress << 1), array, 2, HAL_MAX_DELAY);
+//}
+
+//void writeReg(uint8_t reg, uint8_t value)
+//{
+//    uint8_t array[2];
+//    array[0] = reg;   // Register to write to
+//    array[1] = value; // Value to write
+//
+//    // Use the current I2C slave device address (not the register address)
+//    HAL_StatusTypeDef status = HAL_I2C_Master_Transmit(&hi2c1, (address << 1), array, 2, HAL_MAX_DELAY);
+//
+//    // Debug message if the transmission fails
+////    if (status != HAL_OK) {
+////        char debug_message[32];
+////        snprintf(debug_message, sizeof(debug_message), "Write Err: 0x%X", reg);
+////        SSD1306_Clear();
+////        SSD1306_GotoXY(0, 30);
+////        SSD1306_Puts(debug_message, &Font_11x18, 1);
+////        SSD1306_UpdateScreen();
+////        HAL_Delay(2000);
+////        Error_Handler();
+////    }
+//}
+
 
 // Write a 16-bit register
 void writeReg16Bit(uint8_t reg, uint16_t value)
@@ -150,7 +186,6 @@ void setAddress(uint8_t new_addr)
   writeReg(I2C_SLAVE_DEVICE_ADDRESS, new_addr & 0x7F);
   address = new_addr;
 }
-
 
 bool init(bool io_2v8)
 {

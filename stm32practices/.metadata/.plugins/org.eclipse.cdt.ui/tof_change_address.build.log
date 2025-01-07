@@ -1,0 +1,10 @@
+20:12:46 **** Incremental Build of configuration Debug for project tof_change_address ****
+make -j4 all 
+arm-none-eabi-size  tof_change_address.elf 
+   text	   data	    bss	    dec	    hex	filename
+  22964	    108	   3020	  26092	   65ec	tof_change_address.elf
+Finished building: default.size.stdout
+ 
+
+20:12:47 Build Finished. 0 errors, 0 warnings. (took 833ms)
+

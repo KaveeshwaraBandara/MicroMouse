@@ -117,7 +117,9 @@ inline uint8_t getAddress(void) { return address; }
 
 bool init(bool io_2v8);// = true);
 
+
 void writeReg(uint8_t reg, uint8_t value);
+//void writeReg(uint8_t deviceAddress, uint8_t reg, uint8_t value);
 void writeReg16Bit(uint8_t reg, uint16_t value);
 void writeReg32Bit(uint8_t reg, uint32_t value);
 uint8_t readReg(uint8_t reg);
@@ -174,6 +176,8 @@ static uint16_t decodeTimeout(uint16_t value);
 static uint16_t encodeTimeout(uint16_t timeout_mclks);
 static uint32_t timeoutMclksToMicroseconds(uint16_t timeout_period_mclks, uint8_t vcsel_period_pclks);
 static uint32_t timeoutMicrosecondsToMclks(uint32_t timeout_period_us, uint8_t vcsel_period_pclks);
+
+void VL53L0X_SetAddress(uint8_t new_add);
 
 #ifdef __cplusplus
 }

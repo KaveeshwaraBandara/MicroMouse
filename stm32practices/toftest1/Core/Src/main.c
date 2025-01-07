@@ -64,6 +64,33 @@ uint16_t timeout_start_ms = 50;
 uint16_t io_timeout = 50;
 uint8_t did_timeout = 50;
 
+void scanI2CBus(void) {
+    char buffer[16];
+    SSD1306_Clear();
+    SSD1306_GotoXY(0, 0);
+    SSD1306_Puts("I2C Scan:", &Font_11x18, 1);
+
+    for (uint8_t address = 1; address < 128; address++) {
+        // Perform an I2C write operation to check if the device responds
+        if (HAL_I2C_IsDeviceReady(&hi2c1, (address << 1), 1, 10) == HAL_OK) {
+            snprintf(buffer, sizeof(buffer), "Found: 0x%02X", address);
+            SSD1306_GotoXY(0, 30);
+            SSD1306_Puts(buffer, &Font_11x18, 1);
+            SSD1306_UpdateScreen();
+            HAL_Delay(1000);
+            //SD1306_Clear();// Delay to display each address found
+        }
+    }
+    HAL_Delay(2000);  // Delay at the end of the scan
+}
+
+void writeRegnew(uint8_t deviceAddress, uint8_t reg, uint8_t value)
+{
+    uint8_t array[2];
+    array[0] = reg;    // Register address
+    array[1] = value;  // Value to write
+    HAL_I2C_Master_Transmit(&hi2c1, (deviceAddress << 1), array, 2, HAL_MAX_DELAY);
+}
 /* USER CODE END 0 */
 
 /**
@@ -158,6 +185,11 @@ int main(void)
       HAL_Delay(2000);
       Error_Handler();  // Will halt the program here
   }
+  //setAddress(0x31);
+  uint8_t currentAddress = 0x29;  // Default address
+  uint8_t newAddress = 0x34;      // New desired address
+  writeRegnew(currentAddress, 0x8A, newAddress & 0x7F);  // Change address
+  HAL_Delay(10);
 
   SSD1306_GotoXY(0, 30);
   SSD1306_Puts("Initialized", &Font_11x18, 1);
@@ -165,9 +197,10 @@ int main(void)
   HAL_Delay(1000);
   SSD1306_Clear();
 
+  scanI2CBus();
+  SSD1306_Clear();
 
   uint16_t distance;
-  float distance_cm;
   char buffer[16];
 
   /* USER CODE END 2 */
@@ -176,9 +209,13 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+	  HAL_Delay(1000);
+	  scanI2CBus();
+	  //VL53L0X_SetAddress(0x31);
+	  HAL_Delay(10);
+
 	  distance = readRangeSingleMillimeters();
-	  distance_cm = distance / 10;
-	  itoa(distance_cm, buffer, 10);
+	  itoa(distance, buffer, 10);
 	  //ssd1306_Fill(SSD1306_COLOR_BLACK); // Clear screen
 	  //ssd1306_SetCursor(10, 10);         // Set cursor position
 //	  ssd1306_WriteString(buffer, SSD1306_FONT_11x18,1); // Display text

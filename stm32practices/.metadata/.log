@@ -2561,3 +2561,12 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2025-01-06 08:41:43.071
 !MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-01-06 09:10:55.564
+!MESSAGE Indexed 'two_tofs_with_oled' (17 sources, 78 headers) in 6.63 sec: 3,643 declarations; 13,251 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.012%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-01-06 09:15:14.274
+!MESSAGE Indexed 'two_tofs_with_oled' (21 sources, 85 headers) in 3.37 sec: 5,217 declarations; 26,832 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0062%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-01-06 19:46:03.560
+!MESSAGE Indexed 'tof_change_address' (17 sources, 78 headers) in 3.81 sec: 3,643 declarations; 13,251 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.012%)
