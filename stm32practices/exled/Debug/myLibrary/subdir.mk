@@ -5,12 +5,15 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../myLibrary/VL53L0X.c \
 ../myLibrary/blink.c 
 
 OBJS += \
+./myLibrary/VL53L0X.o \
 ./myLibrary/blink.o 
 
 C_DEPS += \
+./myLibrary/VL53L0X.d \
 ./myLibrary/blink.d 
 
 
@@ -21,7 +24,7 @@ myLibrary/%.o myLibrary/%.su myLibrary/%.cyclo: ../myLibrary/%.c myLibrary/subdi
 clean: clean-myLibrary
 
 clean-myLibrary:
-	-$(RM) ./myLibrary/blink.cyclo ./myLibrary/blink.d ./myLibrary/blink.o ./myLibrary/blink.su
+	-$(RM) ./myLibrary/VL53L0X.cyclo ./myLibrary/VL53L0X.d ./myLibrary/VL53L0X.o ./myLibrary/VL53L0X.su ./myLibrary/blink.cyclo ./myLibrary/blink.d ./myLibrary/blink.o ./myLibrary/blink.su
 
 .PHONY: clean-myLibrary
 

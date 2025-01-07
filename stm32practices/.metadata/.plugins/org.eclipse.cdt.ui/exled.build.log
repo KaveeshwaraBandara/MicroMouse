@@ -1,10 +1,38 @@
-18:16:00 **** Incremental Build of configuration Debug for project exled ****
+12:11:52 **** Incremental Build of configuration Debug for project exled ****
 make -j4 all 
-arm-none-eabi-size  exled.elf 
-   text	   data	    bss	    dec	    hex	filename
-   4616	     12	   1572	   6200	   1838	exled.elf
-Finished building: default.size.stdout
- 
+arm-none-eabi-gcc "../myLibrary/VL53L0X.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/user/Desktop/stm32Board/exled/myLibrary" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"myLibrary/VL53L0X.d" -MT"myLibrary/VL53L0X.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "myLibrary/VL53L0X.o"
+In file included from ../myLibrary/VL53L0X.c:1:
+../myLibrary/VL53L0X.h:6:8: error: unknown type name 'I2C_HandleTypeDef'
+    6 | extern I2C_HandleTypeDef hi2c1;
+      |        ^~~~~~~~~~~~~~~~~
+../myLibrary/VL53L0X.c: In function 'WriteReg':
+../myLibrary/VL53L0X.c:28:5: warning: implicit declaration of function 'HAL_I2C_Master_Transmit' [-Wimplicit-function-declaration]
+   28 |     HAL_I2C_Master_Transmit(&hi2c1, (deviceAddress << 1), array, 2, HAL_MAX_DELAY);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~
+../myLibrary/VL53L0X.c: In function 'ReadReg':
+../myLibrary/VL53L0X.c:38:12: warning: implicit declaration of function 'HAL_I2C_Master_Receive' [-Wimplicit-function-declaration]
+   38 |     return HAL_I2C_Master_Receive(&hi2c1, (deviceAddress << 1)|1, value, 1, HAL_MAX_DELAY);
+      |            ^~~~~~~~~~~~~~~~~~~~~~
+../myLibrary/VL53L0X.c: In function 'SetTimingBudget':
+../myLibrary/VL53L0X.c:55:31: error: 'VL53L0X_REG_MSRC_CONFIG_TIMEOUT_MACROP' undeclared (first use in this function)
+   55 |     if (WriteReg(sensor_addr, VL53L0X_REG_MSRC_CONFIG_TIMEOUT_MACROP, (timeout_value >> 8) & 0xFF) != HAL_OK)
+      |                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../myLibrary/VL53L0X.c:55:31: note: each undeclared identifier is reported only once for each function it appears in
+../myLibrary/VL53L0X.c:62:31: error: 'VL53L0X_REG_FINAL_RANGE_CONFIG_TIMEOUT_MACROP_HI' undeclared (first use in this function)
+   62 |     if (WriteReg(sensor_addr, VL53L0X_REG_FINAL_RANGE_CONFIG_TIMEOUT_MACROP_HI, (timeout_value >> 8) & 0xFF) != HAL_OK)
+      |                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../myLibrary/VL53L0X.c: In function 'VL53L0X_Init':
+../myLibrary/VL53L0X.c:91:9: error: void value not ignored as it ought to be
+   91 |     if (WriteReg(sensor_addr, REG_REFERENCE_51, 0x00) != HAL_OK) // Reset 0x51 to default
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../myLibrary/VL53L0X.c:95:9: error: void value not ignored as it ought to be
+   95 |     if (WriteReg(sensor_addr, REG_REFERENCE_61, 0x00) != HAL_OK) // Reset 0x61 to default
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../myLibrary/VL53L0X.c:101:9: error: void value not ignored as it ought to be
+  101 |     if (WriteReg(sensor_addr, 0x00, 0x01) != HAL_OK) // Start the measurement
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+make: *** [myLibrary/subdir.mk:22: myLibrary/VL53L0X.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
 
-18:16:01 Build Finished. 0 errors, 0 warnings. (took 907ms)
+12:11:53 Build Failed. 7 errors, 2 warnings. (took 1s.248ms)
 

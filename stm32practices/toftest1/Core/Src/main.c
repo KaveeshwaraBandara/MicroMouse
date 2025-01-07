@@ -24,6 +24,7 @@
 #include "fonts.h"
 #include "ssd1306.h"
 #include "VL53L0X.h"
+#include "stdio.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -42,7 +43,7 @@
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
-I2C_HandleTypeDef hi2c1;
+extern I2C_HandleTypeDef hi2c1;
 
 /* USER CODE BEGIN PV */
 
@@ -84,13 +85,13 @@ void scanI2CBus(void) {
     HAL_Delay(2000);  // Delay at the end of the scan
 }
 
-void writeRegnew(uint8_t deviceAddress, uint8_t reg, uint8_t value)
-{
-    uint8_t array[2];
-    array[0] = reg;    // Register address
-    array[1] = value;  // Value to write
-    HAL_I2C_Master_Transmit(&hi2c1, (deviceAddress << 1), array, 2, HAL_MAX_DELAY);
-}
+//void writeRegnew(uint8_t deviceAddress, uint8_t reg, uint8_t value)
+//{
+//    uint8_t array[2];
+//    array[0] = reg;    // Register address
+//    array[1] = value;  // Value to write
+//    HAL_I2C_Master_Transmit(&hi2c1, (deviceAddress << 1), array, 2, HAL_MAX_DELAY);
+//}
 /* USER CODE END 0 */
 
 /**
@@ -177,22 +178,55 @@ int main(void)
       SSD1306_UpdateScreen();
   }
 
+  SSD1306_Clear();
+//  if (!init(true)) {
+//      SSD1306_GotoXY(0, 30);
+//      SSD1306_Puts("Failed2", &Font_11x18, 1);
+//      SSD1306_UpdateScreen();
+//      HAL_Delay(2000);
+//      Error_Handler();  // Will halt the program here
+//  }
 
-  if (!init(true)) {
-      SSD1306_GotoXY(0, 30);
-      SSD1306_Puts("Failed2", &Font_11x18, 1);
-      SSD1306_UpdateScreen();
-      HAL_Delay(2000);
-      Error_Handler();  // Will halt the program here
+  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_3, 1);  // Enable Sensor 1
+  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, 0);  // Disable Sensor 2
+  HAL_Delay(50);
+  if (VL53L0X_Init(0x29) == HAL_OK)
+  {
+	  SSD1306_GotoXY(0, 30);
+	  SSD1306_Puts("Success", &Font_11x18, 1);
+	  HAL_Delay(2000);
+	  SSD1306_UpdateScreen();
   }
-  //setAddress(0x31);
-  uint8_t currentAddress = 0x29;  // Default address
-  uint8_t newAddress = 0x34;      // New desired address
-  writeRegnew(currentAddress, 0x8A, newAddress & 0x7F);  // Change address
+  else
+  {
+	  SSD1306_GotoXY(0, 30);
+	  SSD1306_Puts("Faild8", &Font_11x18, 1);
+	  HAL_Delay(2000);
+	  SSD1306_UpdateScreen();
+  }
+
+  if (SetAddress(0x31) == HAL_OK)
+  {
+	  SSD1306_GotoXY(0, 30);
+	  SSD1306_Puts("Success", &Font_11x18, 1);
+	  HAL_Delay(2000);
+	  SSD1306_UpdateScreen();
+  }
+  else
+  {
+	  SSD1306_GotoXY(0, 30);
+	  SSD1306_Puts("Faild8", &Font_11x18, 1);
+	  HAL_Delay(2000);
+	  SSD1306_UpdateScreen();
+  }
+
+  //uint8_t currentAddress = 0x29;  // Default address
+  //uint8_t newAddress = 0x34;      // New desired address
+  //writeRegnew(currentAddress, 0x8A, newAddress & 0x7F);  // Change address
   HAL_Delay(10);
 
   SSD1306_GotoXY(0, 30);
-  SSD1306_Puts("Initialized", &Font_11x18, 1);
+  SSD1306_Puts("Initialized1", &Font_11x18, 1);
   SSD1306_UpdateScreen();
   HAL_Delay(1000);
   SSD1306_Clear();
@@ -200,8 +234,57 @@ int main(void)
   scanI2CBus();
   SSD1306_Clear();
 
-  uint16_t distance;
-  char buffer[16];
+  //HAL_GPIO_WritePin(GPIOB, GPIO_PIN_3, 0);  // Enable Sensor 1
+  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, 1);  // Disable Sensor 2
+  HAL_Delay(50);
+  if (VL53L0X_Init(0x29) == HAL_OK)
+  {
+	  SSD1306_GotoXY(0, 30);
+	  SSD1306_Puts("Success", &Font_11x18, 1);
+	  HAL_Delay(2000);
+	  SSD1306_UpdateScreen();
+  }
+  else
+  {
+	  SSD1306_GotoXY(0, 30);
+	  SSD1306_Puts("Faild8", &Font_11x18, 1);
+	  HAL_Delay(2000);
+	  SSD1306_UpdateScreen();
+  }
+
+  if (SetAddress(0x32) == HAL_OK)
+  {
+	  SSD1306_GotoXY(0, 30);
+	  SSD1306_Puts("Success", &Font_11x18, 1);
+	  HAL_Delay(2000);
+	  SSD1306_UpdateScreen();
+  }
+  else
+  {
+	  SSD1306_GotoXY(0, 30);
+	  SSD1306_Puts("Faild8", &Font_11x18, 1);
+	  HAL_Delay(2000);
+	  SSD1306_UpdateScreen();
+  }
+
+  HAL_Delay(10);
+
+   SSD1306_GotoXY(0, 30);
+   SSD1306_Puts("Initialized2", &Font_11x18, 1);
+   SSD1306_UpdateScreen();
+   HAL_Delay(1000);
+   SSD1306_Clear();
+
+   scanI2CBus();
+   //HAL_GPIO_WritePin(GPIOB, GPIO_PIN_3, 1);  // Enable Sensor 1
+   //HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, 1);  // Disable Sensor 2
+   scanI2CBus();
+   SSD1306_Clear();
+
+  uint16_t distance1;
+  uint16_t distance2;
+  char buffer1[16];
+  char buffer2[16];
 
   /* USER CODE END 2 */
 
@@ -209,21 +292,28 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  HAL_Delay(1000);
-	  scanI2CBus();
-	  //VL53L0X_SetAddress(0x31);
-	  HAL_Delay(10);
-
-	  distance = readRangeSingleMillimeters();
-	  itoa(distance, buffer, 10);
+	  distance1 = readDistance(0x31);
+	  distance2 = readDistance(0x32);
+//	  HAL_Delay(1000);
+	  //scanI2CBus();
+//	  //VL53L0X_SetAddress(0x31);
+//	  HAL_Delay(10);
+//
+//	  distance = readRangeSingleMillimeters();
+	  itoa(distance1, buffer1, 10);
+	  itoa(distance2, buffer2, 10);
 	  //ssd1306_Fill(SSD1306_COLOR_BLACK); // Clear screen
 	  //ssd1306_SetCursor(10, 10);         // Set cursor position
 //	  ssd1306_WriteString(buffer, SSD1306_FONT_11x18,1); // Display text
 	  SSD1306_GotoXY (37, 40);
-	  SSD1306_Puts (buffer, &Font_11x18, 1);
+	  SSD1306_Puts (buffer1, &Font_11x18, 1);
+	  SSD1306_GotoXY (37, 10);
+	  SSD1306_Puts (buffer2, &Font_11x18, 1);
 	  SSD1306_UpdateScreen();         // Update OLED
 
 	  HAL_Delay(200); // Delay to prevent excessive updates
+	  //SSD1306_Clear();
+	  //HAL_Delay(500);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -308,12 +398,23 @@ static void MX_I2C1_Init(void)
   */
 static void MX_GPIO_Init(void)
 {
+  GPIO_InitTypeDef GPIO_InitStruct = {0};
 /* USER CODE BEGIN MX_GPIO_Init_1 */
 /* USER CODE END MX_GPIO_Init_1 */
 
   /* GPIO Ports Clock Enable */
   __HAL_RCC_GPIOA_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_3|GPIO_PIN_4, GPIO_PIN_RESET);
+
+  /*Configure GPIO pins : PB3 PB4 */
+  GPIO_InitStruct.Pin = GPIO_PIN_3|GPIO_PIN_4;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
 /* USER CODE BEGIN MX_GPIO_Init_2 */
 /* USER CODE END MX_GPIO_Init_2 */

@@ -1,43 +1,17 @@
-20:23:36 **** Incremental Build of configuration Debug for project toftest1 ****
+14:13:09 **** Incremental Build of configuration Debug for project toftest1 ****
 make -j4 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/user/Desktop/stm32Board/toftest1/myLibraries" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'scanI2CBus':
-../Core/Src/main.c:76:13: warning: implicit declaration of function 'snprintf' [-Wimplicit-function-declaration]
-   76 |             snprintf(buffer, sizeof(buffer), "Found: 0x%02X", address);
-      |             ^~~~~~~~
-../Core/Src/main.c:27:1: note: include '<stdio.h>' or provide a declaration of 'snprintf'
-   26 | #include "VL53L0X.h"
-  +++ |+#include <stdio.h>
-   27 | /* USER CODE END Includes */
-../Core/Src/main.c:76:13: warning: incompatible implicit declaration of built-in function 'snprintf' [-Wbuiltin-declaration-mismatch]
-   76 |             snprintf(buffer, sizeof(buffer), "Found: 0x%02X", address);
-      |             ^~~~~~~~
-../Core/Src/main.c:76:13: note: include '<stdio.h>' or provide a declaration of 'snprintf'
-In file included from ../Core/Src/main.c:26:
-C:/Users/user/Desktop/stm32Board/toftest1/myLibraries/VL53L0X.h: At top level:
-C:/Users/user/Desktop/stm32Board/toftest1/myLibraries/VL53L0X.h:175:17: warning: 'decodeTimeout' declared 'static' but never defined [-Wunused-function]
-  175 | static uint16_t decodeTimeout(uint16_t value);
-      |                 ^~~~~~~~~~~~~
-C:/Users/user/Desktop/stm32Board/toftest1/myLibraries/VL53L0X.h:176:17: warning: 'encodeTimeout' declared 'static' but never defined [-Wunused-function]
-  176 | static uint16_t encodeTimeout(uint16_t timeout_mclks);
-      |                 ^~~~~~~~~~~~~
-C:/Users/user/Desktop/stm32Board/toftest1/myLibraries/VL53L0X.h:177:17: warning: 'timeoutMclksToMicroseconds' declared 'static' but never defined [-Wunused-function]
-  177 | static uint32_t timeoutMclksToMicroseconds(uint16_t timeout_period_mclks, uint8_t vcsel_period_pclks);
-      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~
-C:/Users/user/Desktop/stm32Board/toftest1/myLibraries/VL53L0X.h:178:17: warning: 'timeoutMicrosecondsToMclks' declared 'static' but never defined [-Wunused-function]
-  178 | static uint32_t timeoutMicrosecondsToMclks(uint32_t timeout_period_us, uint8_t vcsel_period_pclks);
-      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~
 arm-none-eabi-gcc -o "toftest1.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\user\Desktop\stm32Board\toftest1\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="toftest1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: toftest1.elf
  
 arm-none-eabi-size  toftest1.elf 
 arm-none-eabi-objdump -h -S toftest1.elf  > "toftest1.list"
    text	   data	    bss	    dec	    hex	filename
-  23544	    108	   3020	  26672	   6830	toftest1.elf
+  19552	    100	   3020	  22672	   5890	toftest1.elf
 Finished building: default.size.stdout
  
 Finished building: toftest1.list
  
 
-20:23:39 Build Finished. 0 errors, 6 warnings. (took 2s.948ms)
+14:13:12 Build Finished. 0 errors, 0 warnings. (took 2s.309ms)
 
